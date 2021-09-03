@@ -107,6 +107,7 @@ namespace Unity.LEGO.Game
                 // Remember the scene to load and handle the camera accordingly.
                 if (evt.Win)
                 {
+                
                     m_GameOverSceneToLoad = m_WinScene;
                     m_GameOverSceneTime = Time.time + m_WinSceneDelay;
 
