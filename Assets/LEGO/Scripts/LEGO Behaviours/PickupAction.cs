@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.LEGO.Behaviours.Triggers;
+using Unity.LEGO.Minifig;
 
 namespace Unity.LEGO.Behaviours.Actions
 {
@@ -153,6 +154,27 @@ namespace Unity.LEGO.Behaviours.Actions
                     // Check if picked up.
                     if (m_ActiveColliders.Count > 0)
                     {
+                        
+                        //Find the minifig
+                        var minifigController = FindObjectOfType<MinifigController>();
+ 
+                        if (minifigController)
+                        {
+                            //Disable player input to the Minifig so that its animation won't be interrupted
+                            minifigController.SetInputEnabled(false);
+ 
+                            //Play the Minifig animation
+                            minifigController.PlaySpecialAnimation(MinifigController.SpecialAnimation.Spin, null, EnableMinifigInput);
+ 
+                            //Re-enable player input to the Minifig
+ 
+                            void EnableMinifigInput(bool b)
+                            {
+                                minifigController.SetInputEnabled(true);
+                            }
+ 
+                        }
+                        
                         // Particle burst.
                         if (m_ParticleSystem)
                         {

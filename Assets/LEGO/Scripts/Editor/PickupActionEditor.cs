@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using Unity.LEGO.Behaviours.Actions;
 using Unity.LEGO.Behaviours.Triggers;
+using Unity.LEGO.Minifig;
 using UnityEditor.SceneManagement;
 
 namespace Unity.LEGO.EditorExt
